@@ -13,16 +13,17 @@ const initialValues = {
 function App() {
   const [ formValues, setFormValues ] = useState(initialValues);
 
+  console.log(formValues);
+
   const questionType = () => {
     if(formValues.multipleChoice && !formValues.trueFalse) {
       return('&type=multiple');
-    } else if (formValues.trueFalse && !formValues.multipleChoice) {
+    } else if (!formValues.multipleChoice && formValues.trueFalse) {
       return('&type=boolean');
     } else {
       return('');
     }
   }
-
 
 
   const handleChange = (evt) => {
@@ -39,6 +40,7 @@ function App() {
         // setFormValues(initialValues);
       })
       .catch(err => {
+        console.log(err);
       })
   }
 
