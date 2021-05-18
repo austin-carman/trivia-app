@@ -1,1 +1,1 @@
-# spotify-react-app
+# Trivia-App
